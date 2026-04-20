@@ -2,7 +2,7 @@
 
 Ferramenta web que analisa se um texto foi gerado por inteligência artificial. Roda 100% no navegador — nenhum dado é enviado a servidores externos.
 
-Também oferece a opção de **humanizar** o texto detectado como IA, reescrevendo-o com a API Gemini para soar mais natural.
+Também oferece a opção de **humanizar** o texto detectado como IA, reescrevendo-o com a API Gemini para burlar deteções de IA.
 
 ---
 
