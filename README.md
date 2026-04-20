@@ -11,8 +11,13 @@ Toda a detecção roda localmente no navegador do usuário. Também oferece a op
 - Cole texto diretamente ou envie um arquivo **PDF, DOCX ou DOC**
 - Detecção local via modelo de regressão logística (sem servidor)
 - Humanização do texto via **Google Gemini** (requer chave de API)
-- Suporte a português e inglês
 - Download do texto humanizado em PDF
+
+## Suporte a idiomas
+
+O detector foi projetado e calibrado principalmente para **inglês**, onde a precisão é maior.
+
+Para **português (PT-BR)** há suporte parcial: conectivos discursivos (*além disso, portanto, entretanto...*), frases de ênfase (*vale ressaltar, é importante destacar...*), voz passiva e sinais informais (*vc, tô, kkk*) são detectados normalmente. Porém, duas das features de maior peso no modelo — vocabulário acadêmico (*framework, methodology, leveraging...*) e contrações (*don't, I'm...*) — são exclusivamente inglesas e não contribuem para textos em português. O resultado ainda é útil, mas a sensibilidade é menor do que em inglês.
 
 ---
 
