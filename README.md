@@ -1,8 +1,8 @@
 # Detector de Texto IA
 
-Ferramenta web que analisa se um texto foi gerado por inteligência artificial. Roda 100% no navegador — nenhum dado é enviado a servidores externos.
+Ferramenta web que analisa se um texto foi gerado por inteligência artificial. Projetada para ser hospedada **gratuitamente no GitHub Pages** como um site estático — sem servidor, sem backend, sem nenhum custo de infraestrutura.
 
-Também oferece a opção de **humanizar** o texto detectado como IA, reescrevendo-o com a API Gemini para burlar deteções de IA.
+Toda a detecção roda localmente no navegador do usuário. Também oferece a opção de **humanizar** o texto detectado como IA, reescrevendo-o com a API Gemini para burlar deteções de IA.
 
 ---
 
