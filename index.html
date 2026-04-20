@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detector de Texto IA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>Detector de Texto IA</h1>
+  <p>Verifique se um texto foi gerado por inteligência artificial — 100% no navegador, sem servidores.</p>
+</header>
+
+<div class="card">
+
+  <div class="tabs" role="tablist">
+    <button class="tab active" data-tab="text" role="tab" type="button">Colar texto</button>
+    <button class="tab"        data-tab="file" role="tab" type="button">Enviar arquivo</button>
+  </div>
+
+  <!-- Painel: texto -->
+  <div class="tab-panel active" id="panel-text">
+    <label for="inputText">Cole o texto aqui</label>
+    <div class="textarea-container" id="scannerContainer">
+      <div class="scanner-line"></div>
+      <textarea id="inputText" placeholder="Cole aqui o texto que deseja analisar (mínimo 50 caracteres)..."></textarea>
+    </div>
+    <div class="meta">
+      <span id="charCount">0 caracteres</span>
+      <span>Mín. 50 · Recomendado 200+</span>
+    </div>
+  </div>
+
+  <!-- Painel: arquivo -->
+  <div class="tab-panel" id="panel-file">
+    <div class="drop-zone" id="dropZone" role="button" tabindex="0" aria-label="Selecionar arquivo">
+      <span class="drop-icon">📄</span>
+      <p class="drop-label">Arraste um arquivo aqui ou <span class="drop-link">clique para selecionar</span></p>
+      <p class="drop-hint">PDF · DOCX · DOC</p>
+    </div>
+    <input type="file" id="fileInput" accept=".pdf,.docx,.doc" hidden />
+    <div id="fileStatus" class="file-status"></div>
+    <div id="humanizedResultWrap" style="display:none">
+      <label for="humanizedResult" style="margin-top:1rem">Texto humanizado</label>
+      <textarea id="humanizedResult" readonly style="height:200px"></textarea>
+    </div>
+  </div>
+
+  <p class="ensemble-info">Modelo ML Local (Análise Estrutural)</p>
+
+  <button class="btn-analyze" id="analyzeBtn" disabled type="button">Analisar texto</button>
+  <button class="btn-humanize" id="humanizeBtn" style="display:none" type="button">📝 Humanizar texto</button>
+
+  <div id="humanizedActionsWrap" style="display:none" class="humanized-actions">
+    <button class="btn-action" id="copyTextBtn" type="button">📋 Copiar texto</button>
+    <button class="btn-action" id="downloadPdfBtn" type="button">📄 Baixar PDF simplificado</button>
+  </div>
+
+  <div class="humanize-progress-wrap" id="humanizeProgressWrap" style="display:none">
+    <div class="humanize-progress-track">
+      <div class="humanize-progress-fill" id="humanizeProgressFill"></div>
+    </div>
+    <div class="humanize-progress-meta">
+      <span>Reescrevendo com IA…</span>
+      <span id="humanizeProgressLabel">0%</span>
+    </div>
+  </div>
+  <button class="btn-cancel" id="cancelBtn" style="display:none" type="button">✕ Cancelar humanização</button>
+  <div id="humanizeError" style="display:none" class="humanize-error"></div>
+
+  <div id="modelStatus" class="model-status"></div>
+  <div id="result"></div>
+</div>
+
+<footer>
+  Análise local · nenhum dado enviado a servidores · open source
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script type="module" src="main.js"></script>
+</body>
+</html>

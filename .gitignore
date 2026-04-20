@@ -1,0 +1,21 @@
+# Chave da API local — NUNCA commitar
+config.js
+
+# Modelo binário (pesos já estão em detector.js)
+ai_detector.onnx
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
